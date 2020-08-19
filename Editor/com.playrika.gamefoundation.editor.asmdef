@@ -1,0 +1,17 @@
+{
+    "name": "com.playrika.gamefoundation.editor",
+    "references": [
+        "GUID:300ba9a4fddf313498873e254dd1f97f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
