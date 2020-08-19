@@ -33,11 +33,14 @@ namespace Playrika.GameFoundation.UI
             }
 
             var type = typeof(T);
-            var deviceType = DeviceHelper.deviceType;
 
-            var windowPrefab = Resources.Load<T>($"{instance._resourcesPath}/{type.Name}_{deviceType}");
+            var path = string.IsNullOrEmpty(instance._resourcesPath)
+                ? type.Name
+                : $"{instance._resourcesPath}/{type.Name}";
+
+            var windowPrefab = Resources.Load<T>($"{path}_{DeviceHelper.deviceType}");
             if (windowPrefab == null)
-                windowPrefab = Resources.Load<T>($"{instance._resourcesPath}/{type.Name}");
+                windowPrefab = Resources.Load<T>(path);
 
             var window = Instantiate(windowPrefab, instance.transform, false);
             window.name = type.Name;
